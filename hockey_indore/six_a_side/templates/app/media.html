@@ -1,0 +1,126 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block title %}Media{% endblock title %}
+{% block media %} active {%endblock media %}
+{% block main-content %}
+
+    <!-- Page Header Start -->
+    <div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container text-center py-5">
+            <h3 class="display-5 text-white mb-4 animated slideInDown">Catch Latest News, Photos and Highlights from
+                Previous Events</h2>
+            <!-- <nav aria-label="breadcrumb animated slideInDown">
+                <ol class="breadcrumb justify-content-center mb-0">
+                    <li class="breadcrumb-item active" aria-current="page"></li>
+                </ol>
+            </nav> -->
+        </div>
+    </div>
+    <!-- Page Header End -->
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="fs-5 fw-bold text-primary"></p>
+                <h1 class="display-5 mb-5">Browse</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="{% static 'app/img/11.jpeg' %}" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid bg-light" src="{% static 'app/img/icon/photo2.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Photos</h4>
+                            <p class="mb-4">Browse from a vast collection of Photos Lorem ipsum dolor sit amet consectetur adipisicing elit. Error asperiores officiis iste mollitia, corrupti consequuntur esse temporibus aliquid eaque modi iure laboriosam, minus aliquam. Quasi officiis animi dolorum sunt nobis.</p>
+                            <a class="btn btn-sm bg-light" href="{% url 'photos' %}"><i class="fa fa-plus me-2"></i>Browse</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="{% static 'app/img/3.jpeg' %}" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'app/img/icon/news.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Latest News</h4>
+                            <p class="mb-4">Stay up to date with the latest news from the world of Indore Hockey Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus expedita sint quis assumenda exercitationem libero adipisci ut suscipit vitae corporis, dicta, omnis, veniam quam facilis enim accusamus explicabo. Numquam, aut?</p>
+                            <a class="btn btn-sm bg-light" href="{% url 'news' %}"><i class="fa fa-plus me-2"></i>Browse</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="{% static 'app/img/12.jpeg' %}" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'app/img/icon/play.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Highlights</h4>
+                            <p class="mb-4">Catch all the Highlights and remarkable moments from previous matches and tournaments. Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem vero consectetur blanditiis earum obcaecati deserunt, numquam enim? Explicabo vitae officia id alias repudiandae totam maiores, quisquam accusamus saepe esse eos!</p>
+                            <a class="btn btn-sm bg-light" href="{% url 'videos' %}"><i class="fa fa-plus me-2"></i>Read More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="{% static 'app/img/stadium.jpg' %}" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'app/img/icon/faculty.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Faculties</h4>
+                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime deserunt porro recusandae ducimus totam hic, aut veniam obcaecati repellat. Esse, quisquam nesciunt! Dicta nostrum maxime optio aut nobis excepturi rerum!</p>
+                            <a class="btn btn-sm bg-light" href=""><i class="fa fa-plus me-2"></i>Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="{% static 'app/img/7.jpeg' %}" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'app/img/icon/team.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Teams</h4>
+                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Est, quibusdam? Molestiae maxime, sequi asperiores explicabo vel amet harum dignissimos similique cum et aut ipsam veniam expedita assumenda ab architecto! Voluptates.
+                            </p>
+                            <a class="btn btn-sm bg-light" href=""><i class="fa fa-plus me-2"></i>Show More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service-item rounded d-flex h-100">
+                        <div class="service-img rounded">
+                            <img class="img-fluid" src="{% static 'app/img/6.jpeg' %}" alt="">
+                        </div>
+                        <div class="service-text rounded p-5">
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'app/img/icon/fan.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Fans and Atmosphere</h4>
+                            <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum harum ipsa eaque similique, placeat quis maxime ullam obcaecati incidunt ad fugit excepturi dolorem adipisci, temporibus aperiam nesciunt quibusdam tempora distinctio.</p>
+                            <a class="btn btn-sm bg-light" href=""><i class="fa fa-plus me-2"></i>Show More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+{% endblock main-content %}
+ 

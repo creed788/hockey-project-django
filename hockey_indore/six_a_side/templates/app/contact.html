@@ -1,0 +1,82 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block con %}active{% endblock con %}
+{% block main-content %}
+
+<!-- Page Header Start -->
+<div class="container-fluid page-header py-5 mb-5 wow fadeIn" data-wow-delay="0.1s">
+  <div class="container text-center py-5">
+    <h3 class="display-5 text-white mb-4 animated slideInDown">Reach Out To Us</h3>
+    <nav aria-label="breadcrumb animated slideInDown">
+      <!-- <ol class="breadcrumb justify-content-center mb-0">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'media' %}">Media</a></li>
+        <li class="breadcrumb-item active" aria-current="page">News</li>
+      </ol> -->
+    </nav>
+  </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Contact Start -->
+<div class="container-xxl py-5">
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+        <p class="fs-5 fw-bold text-primary">Contact Us</p>
+        <h1 class="display-5 mb-5">If You Have Any Query, Please Contact Us</h1>
+        <p class="mb-4">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eum ut temporibus magnam impedit id
+          aspernatur iusto ratione, quibusdam quo sunt, eveniet tempore velit! Ullam saepe officia pariatur nemo itaque
+          eum?</p>
+        <form action="" method="post">
+          {% csrf_token %}
+          {% if messages %}
+          {% for message in messages %}
+          <p {% if message.tags %} class="alert alert-{{message.tags}} mb-5" {% endif %}>{{message}}</p>
+          {% endfor %}
+          {% endif %}
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="form-floating">
+                  {{ form.name }}
+                  <label for="{{ form.name.id_for_label }}">Your Name</label>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="form-floating">
+                  {{ form.email }}
+                  <label for="{{ form.email.id_for_label }}">Your Email</label>
+              </div>
+          </div>
+          <div class="col-12">
+              <div class="form-floating">
+                  {{ form.subject }}
+                  <label for="{{ form.subject.id_for_label }}">Subject</label>
+              </div>
+          </div>
+          <div class="col-12">
+              <div class="form-floating">
+                  {{ form.message }}
+                  <label for="{{ form.message.id_for_label }}">Message</label>
+              </div>
+          </div>
+            <div class="col-12 text-center">
+              <button class="btn btn-primary py-3 px-4" type="submit">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s" style="min-height: 450px;">
+        <div class="position-relative rounded overflow-hidden h-100">
+          <iframe class="position relative w-100 h-100"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13797.807257854907!2d75.84288262163334!3d22.689208020794837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1692685674366!5m2!1sen!2sin"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Contact End -->
+
+{% endblock main-content %}

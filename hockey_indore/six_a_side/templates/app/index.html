@@ -1,0 +1,466 @@
+{% extends "app/base.html" %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+{% block home %}active{%endblock home %}
+{% block main-content %}
+
+<!-- Carousel Start -->
+<div class="container-fluid p-0 wow fadeIn" data-wow-delay="0.1s">
+    <div id="header-carousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" style="height:570px; min-height: 300px">
+                <img class="w-100" src="{% static 'app/img/1.jpeg' %}" alt="Image">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <h1 class="text-white mb-5 animated slideInDown">Indonesia 2018
+                                    Six a Side indoor hockey Indonesia team</h1>
+                                <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-4">Explore More</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" style="height:570px; min-height: 300px">
+                <img class="w-100" src="{% static 'app/img/2.jpeg' %}" alt="Image">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <h1 class="text-white mb-5 animated slideInDown">Malaysia with Raja nazreen Sachin,
+                                    Ashfak Shaikh (Secretary)</h1>
+                                <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-4">Explore More</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" style="height:570px; min-height: 300px">
+                <img class="w-100" src="{% static 'app/img/6.jpeg' %}" alt="Image">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <h1 class="text-white mb-5 animated slideInDown">2008 Nation Indoor Hockey
+                                    Tournamet Nashik</h1>
+                                <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-4">Explore More</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" style="height:570px; min-height: 300px">
+                <img class="w-100" src="{% static 'app/img/7.jpeg' %}" alt="Image">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <h1 class="text-white mb-5 animated slideInDown">Pesta Hockey USM Penang
+                                    International KE 38, 2012</h1>
+                                <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-4">Explore More</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item" style="height:570px; min-height: 300px">
+                <img class="w-100" src="{% static 'app/img/8.jpeg' %}" alt="Image">
+                <div class="carousel-caption">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-7">
+                                <h1 class="text-white mb-5 animated slideInDown">Indoor Hockey India team</h1>
+                                <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-4">Explore More</a> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#header-carousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#header-carousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
+<!-- Carousel End -->
+
+
+<!-- Top Feature Start -->
+<div class="container-fluid top-feature py-2 pt-lg-0">
+    <div class="container py-3 pt-lg-0">
+        <div class="row gx-0">
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                <div class="bg-white shadow d-flex align-items-center h-100 px-5" style="min-height: 160px;">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0 btn-lg-square rounded-circle mt-3">
+                            <!-- <i class="fa fa-times text-primary"></i> -->
+                            <img src="{% static 'app/img/icon/h3.png' %}" height="100px" alt="">
+                        </div>
+                        <div class="ps-3">
+                            <h4 class="ps-auto">Our Achievements</h4>
+                            <span>Get to Know about us More!!!<a href="#" class="text-danger"> Know More</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                <div class="owl-carousel testimonial-carousel bg-white shadow h-100 px-5">
+                    {% for news in home_news %}
+                    <div class="testimonial-item d-flex mt-4">
+                        <img class="img-fluid rounded " src="{{news.news_img.url}}" alt="">
+                        <div class="fs-6">
+                            <div class="ps-3">
+                                <h4>News: {{news.news_title}}</h4>
+                                <div class="home-news">
+                                    <p>{{news.news_desc}}</p>
+
+                                </div>
+                                <a href="{% url 'news' %}" class="text-danger"> Read more</a>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    <!-- <div class="testimonial-item d-flex mt-4">
+                        <img class="img-fluid rounded " src="{% static 'app/img/logo_hockey1.png' %}" alt="">
+                        <div class="fs-6">
+                            <div class="ps-3">
+                                <h4>News: asjkfh sdkjf hsdkjfkjdh</h4>
+                                <p class="home-news">asdasdasdasd Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi autem
+                                    repudiandae delectus quos sapiente fugit nisi cumque libero temporibus, ad harum modi
+                                    culpa voluptatibus earum perferendis omnis consectetur vero? Error?</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="testimonial-item d-flex mt-4">
+                        <img class="img-fluid rounded " src="{% static 'app/img/logo_hockey1.png' %}" alt="">
+                        <div class="fs-6">
+                            <div class="ps-3">
+                                <h4>News: asjkfkjdh</h4>
+                                <p class="home-news">thhrthtrhtrhr Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi autem
+                                    repudiandae delectus quos sapiente fugit nisi cumque libero temporibus, ad harum modi
+                                    culpa voluptatibus earum perferendis omnis consectetur vero? Error?</p>
+                            </div>
+                            
+                        </div>
+                    </div> -->
+                </div>
+
+            </div>
+            <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                <div class="bg-white shadow d-flex align-items-center h-100 px-5" style="min-height: 160px;">
+                    <div class="d-flex">
+                        <div class="flex-shrink-0 btn-lg-square rounded-circle mt-3">
+                            <!-- <i class="fa fa-phone text-primary"></i> -->
+                            <img src="{% static 'app/img/icon/h4.png' %}" height="100px" alt="">
+                        </div>
+                        <div class="ps-3">
+                            <h4 class="">Upcoming Events:</h4>
+                            <span>{{schedule.tournament_name}} <br>
+                                {{schedule.start_date}}
+                                <a href="{% url 'schedule' %}" class="text-danger"> Learn
+                                    More</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Top Feature End -->
+
+<!--Icons section-->
+<div class="container-fluid p-3 text-center pl-5">
+    <div class="row justify-content-center">
+        <!-- <div class="col-md-2 col-12 text-white">
+            <a href="#"><img src="{% static 'app/img/icon/3.png' %}" width="100" height="100" alt=""></a>
+            <p class="text-dark text-center">Achievement</p>
+        </div> 
+        <div class="col-md-2 col-12 text-white">
+            <a href="#"><img src="{% static 'app/img/icon/1.png' %}" width="100" height="100" alt=""></a>
+            <p class="text-dark text-center">Tournaments</p>
+        </div> -->
+        <div class="col-md-2 col-12 text-white">
+            <a href="#"><img src="{% static 'app/img/icon/2.png' %}" width="100" height="100" alt=""></a>
+            <p class="text-dark text-center">Teams</p>
+        </div>
+        <div class="col-md-2 col-12 text-white">
+            <a href="#"><img src="{% static 'app/img/icon/5.png' %}" width="100" height="100" alt=""></a>
+            <p class="text-dark text-center">Highlights</p>
+        </div>
+        <!-- <div class="col-md-2 col-12 text-white">
+            <a href="{% url 'schedule' %}"><img src="{% static 'app/img/icon/6.png' %}" width="100" height="100"
+                    alt=""></a>
+            <p class="text-dark text-center">Upcoming Events</p>
+        </div>  -->
+        <div class="col-md-2 col-12 text-white">
+            <a href="{% url 'photos' %}"><img src="{% static 'app/img/icon/3.png' %}" width="100" height="100"
+                    alt=""></a>
+            <p class="text-dark text-center">Gallery</p>
+        </div>
+    </div>
+</div>
+
+<!-- Facts Start -->
+<div class="container-fluid facts my-5 py-5" data-parallax="scroll"
+    data-image-src="{% static 'app/img/hockey_indore.avif' %}">
+    <div class="container py-5">
+        <div class="row g-5">
+            <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.1s">
+                <h1 class="display-4 text-white" data-toggle="counter-up">12</h1>
+                <span class="fs-5 fw-semi-bold text-light">Number of Teams</span>
+            </div>
+            <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.3s">
+                <h1 class="display-4 text-white" data-toggle="counter-up">34</h1>
+                <span class="fs-5 fw-semi-bold text-light">Number of Matches</span>
+            </div>
+            <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.5s">
+                <h1 class="display-4 text-white" data-toggle="counter-up">4</h1>
+                <span class="fs-5 fw-semi-bold text-light">Number of Fields</span>
+            </div>
+            <div class="col-sm-6 col-lg-3 text-center wow fadeIn" data-wow-delay="0.7s">
+                <h1 class="display-4 text-white" data-toggle="counter-up">234</h1>
+                <span class="fs-5 fw-semi-bold text-light">Total Athlethes</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Facts End -->
+
+
+<!-- Team Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <!-- <p class="fs-5 fw-bold text-primary">Our Team</p> -->
+            <h1 class="display-5 mb-5">Association Managing Committe</h1>
+        </div>
+        <div class="row g-4 justify-content-center pb-2">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="{% static 'app/img/3.jpeg' %}" alt="">
+                    <div class="team-text">
+                        <h4 class="mb-0">Mr. Nandu B. Jhadhav</h4>
+                        <p class="text-primary">President</p>
+                        <div class="team-social d-flex">
+                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="{% static 'app/img/nand.jpg' %}" alt="">
+                    <div class="team-text">
+                        <h4 class="mb-0">Mr. Nandkishor M. Khairnar</h4>
+                        <p class="text-primary">Treasure</p>
+                        <div class="team-social d-flex">
+                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="{% static 'app/img/asfak.jpg' %}" alt="">
+                    <div class="team-text">
+                        <h4 class="mb-0">Mr. Ashfak Shaikh</h4>
+                        <p class="text-primary">General Secretary</p>
+                        <div class="team-social d-flex">
+                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-squaret rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp " data-wow-delay="0.1s">
+                <div class="team-item rounded">
+                    <img class="img-fluid" src="{% static 'app/img/1.jpeg' %}" alt="">
+                    <div class="team-text">
+                        <h4 class="mb-0">Mr. Daniel Fernandis</h4>
+                        <p class="text-primary">Referee Board Chairman</p>
+                        <div class="team-social d-flex">
+                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square rounded-circle me-2" href=""><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Team End -->
+
+<!-- Event Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="fs-5 fw-bold text-primary"></p>
+            <h1 class="display-5 mb-5">Upcoming Events</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="service-item rounded d-flex h-100">
+                    <div class="service-img rounded">
+                        <img class="img-fluid" src="{% static 'app/img/1.jpeg' %}" alt="">
+                    </div>
+                    <div class="service-text rounded p-5">
+                        <div class="btn-square bg-light rounded-circle mx-auto mb-3">
+                            <img class="img-fluid" src="{% static 'app/img/men3.png' %}" alt="Icon">
+                        </div>
+                        <h4 class="mb-3"> Men / Boys Tournaments</h4>
+                        <p class="mb-4">1. Junior National Boys, Rajasthan, Dec 2023</p>
+                        <p class="mb-4">2. Sub Junior Nation Boys, Kerela, October 2023</p>
+                        <a class="btn btn-sm bg-light" href="{% url 'schedule' %}"><i class="fa fa-plus me-2"></i>Learn
+                            More</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="service-item rounded d-flex h-100">
+                    <div class="service-img rounded">
+                        <img class="img-fluid" src="{% static 'app/img/11.jpeg' %}" alt="">
+                    </div>
+                    <div class="service-text rounded p-5">
+                        <div class="btn-square bg-light rounded-circle mx-auto mb-3">
+                            <img class="img-fluid" src="{% static 'app/img/inter2.png' %}" alt="Icon">
+                        </div>
+                        <h4 class="mb-3">International Tournaments</h4>
+                        <p class="mb-4">International Indoor Hockey New York, USA March 2024</p>
+                        <a class="btn btn-sm bg-light" href="{% url 'schedule' %}"><i class="fa fa-plus me-2"></i>Learn
+                            More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="service-item rounded d-flex h-100">
+                    <div class="service-img rounded">
+                        <img class="img-fluid" src="{% static 'app/img/12.jpeg' %}" alt="">
+                    </div>
+                    <div class="service-text rounded p-5">
+                        <div class="btn-square bg-light rounded-circle mx-auto mb-3">
+                            <img class="img-fluid" src="{% static 'app/img/women2.png' %}" alt="Icon">
+                        </div>
+                        <h4 class="mb-3"> Women / Girls Tournaments</h4>
+                        <p class="mb-4">1. Junior National Girls, Rajasthan, Dec 2023</p>
+                        <p class="mb-4">2. Sub Junior Nation Girls, Kerela, October 2023</p>
+                        <a class="btn btn-sm bg-light" href="{% url 'schedule' %}"><i class="fa fa-plus me-2"></i>Learn
+                            More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+            <p class="fs-5 fw-bold text-primary mt-5"> <i class="fa fa-phone me-2"></i> For more Details Contact Mr
+                Asfak Shaikh: 7972575543</p>
+        </div> -->
+    </div>
+</div>
+<!-- Event End -->
+
+
+<!-- Highlights Start -->
+<div class="container">
+    <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+        <p class="fs-5 fw-bold text-primary"></p>
+        <h1 class="display-5 mb-5">Previous Events</h1>
+    </div>
+    <div class="row g-5 align-items-center">
+        <!-- <div class="col-lg-3 col-md-5 wow fadeInUp" data-wow-delay="0.1s">
+                    <img class="img-fluid rounded" data-wow-delay="0.1s" src="img/3.jpeg">
+                </div> -->
+        <div class="col-lg-4 col-md-7 wow fadeInUp" data-wow-delay="0.3s">
+            <p class="display-6 mb-4">Catch all the previous match highlights and Upcoming match Schedules</p>
+            <!-- <a class="btn btn-primary py-3 px-4" href="">Explore More</a> -->
+        </div>
+
+        <div class="col-lg-8 col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-12 col-sm-6 col-lg-12">
+                <!-- <div class="col-12 col-sm-6 col-lg-12">
+                        <div class="border-start ps-4 text-center">
+                            <h3>Highlights</h3>
+                        </div>
+                    </div> -->
+                <div class="border-start ps-4">
+                    <video width="100%" controls>
+                        <!-- <source src="{% static 'app/img/video.mp4' %}" type="video/mp4"> -->
+                    </video>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Highlights End -->
+
+
+<!-- Features Start -->
+<!-- <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5 align-items-center">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="fs-5 fw-bold">Why Choosing Us!</p>
+                    <h1 class="display-5 mb-4">Love nature, stay close to nature. It will never fail you! </h1>
+                    <p class="mb-4">It's our duty to protect nature. We can help nmc to save tress, plants & gardens.
+                        Before cutting trees you need to take permission from nmc and inform them. </p>
+                    <a class="btn btn-primary py-3 px-4" href="">PERMISSION</a>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-md-6">
+                            <div class="row g-4">
+                                <div class="col-12 wow fadeIn" data-wow-delay="0.3s">
+                                    <div class="text-center rounded py-5 px-4"
+                                        style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
+                                        <div class="btn-square bg-light rounded-circle mx-auto mb-4"
+                                            style="width: 90px; height: 90px;">
+                                            <i class="fa fa-check fa-3x text-primary"></i>
+                                        </div>
+                                        <h4 class="mb-0">"Save Trees, Save Nature"</h4>
+                                    </div>
+                                </div>
+                                <div class="col-12 wow fadeIn" data-wow-delay="0.5s">
+                                    <div class="text-center rounded py-5 px-4"
+                                        style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
+                                        <div class="btn-square bg-light rounded-circle mx-auto mb-4"
+                                            style="width: 90px; height: 90px;">
+                                            <i class="fa fa-users fa-3x text-primary"></i>
+                                        </div>
+                                        <h4 class="mb-0">Don't Make Trees rare, Keep Them With Care</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
+                            <div class="text-center rounded py-5 px-4" style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
+                                <div class="btn-square bg-light rounded-circle mx-auto mb-4"
+                                    style="width: 90px; height: 90px;">
+                                    <i class="fa fa-tools fa-3x text-primary"></i>
+                                </div>
+                                <h4 class="mb-0">Trees are Lungs Of The World</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+<!-- Features End -->
+
+
+{% endblock main-content %}
